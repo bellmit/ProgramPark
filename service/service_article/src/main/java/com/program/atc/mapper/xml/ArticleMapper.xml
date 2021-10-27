@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.program.atc.mapper.ArticleMapper">
+<!--    <resultMap id="BaseResultMap" type="com.program.atc.entity.Article" >-->
+<!--        <id column="id" property="id" jdbcType="CHAR" />-->
+<!--        <result column="author_id" property="authorId" jdbcType="CHAR" />-->
+<!--        <result column="author_name" property="authorName" jdbcType="VARCHAR" />-->
+<!--        <result column="title" property="title" jdbcType="VARCHAR" />-->
+<!--        <result column="content" property="content" jdbcType="VARCHAR" />-->
+<!--        <result column="pictures" property="pictures" jdbcType="VARCHAR" />-->
+<!--        <result column="gmt_create" property="gmtCreate" jdbcType="DATE" />-->
+<!--        <result column="comment_count" property="commentCount" jdbcType="INTEGER" />-->
+<!--    </resultMap>-->
+<!--    <resultMap id="BaseResultMap1" type="com.program.atc.entity.vo.ArticleWarnVo" >-->
+<!--        <result column="author_name" property="authorName" jdbcType="VARCHAR" />-->
+<!--        <result column="title" property="title" jdbcType="VARCHAR" />-->
+<!--    </resultMap>-->
+<!--    <sql id="Base_Column_List" >-->
+<!--        id, author_id, author_name, title, content, pictures, gmt_create, comment_count-->
+<!--    </sql>-->
+<!--    <sql id="Base_Column_List1" >-->
+<!--        author_name, title-->
+<!--    </sql>-->
+<!--    <select id="selectAtcByKey" resultMap="BaseResultMap">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List" />-->
+<!--        from article-->
+<!--        where title like CONCAT("%",#{key},"%")-->
+<!--        or-->
+<!--        author_name like CONCAT("%",#{key},"%")-->
+<!--    </select>-->
+<!--    <select id="selectWarnByKey" resultMap="BaseResultMap1">-->
+<!--        select-->
+<!--        <include refid="Base_Column_List1" />-->
+<!--        from article-->
+<!--        where title like CONCAT("%",#{key},"%")-->
+<!--        or-->
+<!--        author_name like CONCAT("%",#{key},"%")-->
+<!--    </select>-->
+    <select id="getCount" resultType="integer">
+        select count(*)
+        from article
+        where author_id=#{id};
+    </select>
+</mapper>

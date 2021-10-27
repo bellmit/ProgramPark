@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.program.user.mapper.User1User2Mapper">
+
+    <select id="getCount" resultType="integer">
+        select count(*)
+        from user1_user2
+        where uid2=#{id};
+    </select>
+    <select id="getCount1" resultType="integer">
+        select count(*)
+        from user1_user2
+        where uid1=#{id};
+    </select>
+</mapper>
